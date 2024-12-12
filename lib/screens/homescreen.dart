@@ -1,5 +1,6 @@
 import 'package:aslab_travel/models/destination_page.dart';
 import 'package:aslab_travel/screens/detail_destination.dart';
+import 'package:aslab_travel/screens/favorite_drink_screen.dart';
 import 'package:aslab_travel/utils/const.dart';
 import 'package:aslab_travel/widgets/popular_destination.dart';
 import 'package:aslab_travel/widgets/rekomendasi_destination.dart';
@@ -11,7 +12,6 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
   int selectedPage = 0;
 
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<IconData> icons = [
     Icons.home_filled,
-    Icons.bookmark_border_outlined,
+    Icons.coffee_maker_outlined,
     Icons.shopping_cart_outlined,
     Icons.person_outline_outlined
   ];
@@ -44,19 +44,12 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Tempat Populer",
+                  "Kuliner Khas Cianjur Sedang Populer",
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                       color: Colors.black),
                 ),
-                Text(
-                  "Lihat Semua",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: blueTextColor,
-                  ),
-                )
               ],
             ),
           ),
@@ -165,6 +158,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                 setState(() {
                                   selectedPage = index;
                                 });
+                                if (icons[index] == Icons.coffee_maker_outlined) {
+                                  // Navigasi ke FavoriteDrinkScreen jika ikon kopi diklik
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => FavoriteDrinkScreen(),
+                                    ),
+                                  );
+                                }
                               },
                               child: Icon(
                                 icons[index],
@@ -191,7 +193,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
 Widget BuildAppBar() {
   return Container(
     height: 120,
@@ -236,7 +237,7 @@ Widget buildSearchButton() {
     ),
     child: TextField(
       decoration: InputDecoration(
-        hintText: 'cari destinasi...',
+        hintText: 'cari Kuliner...',
         hintStyle: TextStyle(
           color: Colors.white54,
           fontSize: 18,

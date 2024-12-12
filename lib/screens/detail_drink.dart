@@ -1,18 +1,20 @@
 import 'package:aslab_travel/models/destination_page.dart';
+import 'package:aslab_travel/models/drink.dart';
 import 'package:aslab_travel/utils/const.dart';
 import 'package:flutter/material.dart';
 
-class DetailDestinasi extends StatefulWidget {
-  final TravelDestination destination;
-  const DetailDestinasi({super.key, required this.destination});
+class DetailDrinkScreen extends StatefulWidget {
+  final Drink destination; // This can be a "Drink" model instead of "Destination"
+  const DetailDrinkScreen({super.key, required this.destination});
 
   @override
-  State<DetailDestinasi> createState() => _DetailDestinasiState();
+  State<DetailDrinkScreen> createState() => _DetailDrinkScreenState();
 }
 
-class _DetailDestinasiState extends State<DetailDestinasi> {
+class _DetailDrinkScreenState extends State<DetailDrinkScreen> {
   PageController pageController = PageController();
   int pageView = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -327,7 +329,12 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
                                 borderRadius: BorderRadius.circular(15),
                                 color: kButtonColor,
                               ),
-                             
+                              child: const Text(
+                                'Pesan Sekarang',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600),
+                              ),
                             ),
                           ),
                         ],
@@ -392,7 +399,7 @@ class _DetailDestinasiState extends State<DetailDestinasi> {
         ),
         const SizedBox(
           child: Text(
-            "Detail Kuliner",
+            "Detail Minuman",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
           ),
         ),

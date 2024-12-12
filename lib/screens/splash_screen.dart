@@ -1,4 +1,5 @@
 import 'package:aslab_travel/latihanmodul/pertemuan5.dart';
+import 'package:aslab_travel/screens/homescreen.dart';
 import 'package:aslab_travel/screens/landingpage.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -15,11 +16,11 @@ class _SplashscreenState extends State<Splashscreen> {
   void initState() {
     super.initState();
     // Menunda selama 3 detik sebelum berpindah ke halaman berikutnya
-    Future.delayed(const Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
         // ignore: use_build_context_synchronously
         context,
-        MaterialPageRoute(builder: (context) => const LandingPage()),
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
     });
   }
@@ -33,7 +34,8 @@ class _SplashscreenState extends State<Splashscreen> {
         alignment: Alignment.center,
         children: [
           Lottie.network(
-            'https://lottie.host/956e1e4f-8c98-4206-ae82-50dd50161d69/dtw01aXDDE.json',
+            'https://lottie.host/8d4a66f3-f26a-499b-9a5c-c6ae73b8ad35/P1CGdwbAw9.json',
+            
             width: 350,
             height: 350,
           ),
@@ -41,10 +43,10 @@ class _SplashscreenState extends State<Splashscreen> {
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(
-                height: 300,
+                height: 450,
               ),
               Text(
-                'ASLABTIF',
+                'REKOMENDASI',
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
@@ -52,7 +54,15 @@ class _SplashscreenState extends State<Splashscreen> {
                 ),
               ),
               Text(
-                'TRAVEL',
+                'KULINER KHAS',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff1b1b1b),
+                ),
+              ),
+              Text(
+                'CIANJUR',
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
