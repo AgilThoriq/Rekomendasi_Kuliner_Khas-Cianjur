@@ -1,12 +1,11 @@
-import 'package:aslab_travel/models/dashboard.dart';
-import 'package:aslab_travel/models/drink.dart';
+import 'package:aslab_travel/models/food.dart';
 import 'package:aslab_travel/utils/const.dart';
 import 'package:flutter/material.dart';
 
-class RekomendasiDrink extends StatelessWidget {
-  final Drink destination;
+class RekomendasiFood extends StatelessWidget {
+  final Food destination;
 
-  const RekomendasiDrink({
+  const RekomendasiFood({
     super.key,
     required this.destination,
   });
@@ -22,7 +21,7 @@ class RekomendasiDrink extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Row(
         children: [
-          // Drink Image Section
+          // Resto Image Section
           Container(
             height: 85,
             width: 95,
@@ -34,16 +33,14 @@ class RekomendasiDrink extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            width: 5,
-          ),
+          const SizedBox(width: 5),
           // Information Section
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Drink Name
+                // Resto Name
                 Text(
                   destination.name,
                   style: const TextStyle(
@@ -52,9 +49,7 @@ class RekomendasiDrink extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
+                const SizedBox(height: 10),
                 // Location
                 Row(
                   children: [
@@ -72,9 +67,7 @@ class RekomendasiDrink extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 5,
-                ),
+                const SizedBox(height: 5),
                 // Rating and Reviews
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -91,16 +84,18 @@ class RekomendasiDrink extends StatelessWidget {
                           TextSpan(
                             text: "${destination.rate} ",
                             style: const TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black,
+                            ),
                           ),
                           TextSpan(
                             text: "(${destination.review} reviews)",
                             style: TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black.withOpacity(0.6)),
+                              fontSize: 10,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black.withOpacity(0.6),
+                            ),
                           ),
                         ],
                       ),
@@ -120,14 +115,17 @@ class RekomendasiDrink extends StatelessWidget {
                     TextSpan(
                       text: "Rp${destination.price}K",
                       style: const TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w500,
-                          color: blueTextColor),
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: blueTextColor,
+                      ),
                     ),
                     TextSpan(
                       text: "/Orang",
                       style: TextStyle(
-                          fontSize: 10, color: Colors.black.withOpacity(0.6)),
+                        fontSize: 10,
+                        color: Colors.black.withOpacity(0.6),
+                      ),
                     ),
                   ],
                 ),

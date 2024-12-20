@@ -23,7 +23,7 @@ class TravelDestination {
 }
 
 List<TravelDestination> listDestination = [
-  // Popular destinations
+  // Popular
   TravelDestination(
       id: 1,
       name: "Laksa Cianjur",
@@ -38,16 +38,17 @@ List<TravelDestination> listDestination = [
       rate: 4.8),
   TravelDestination(
       id: 2,
-      name: "Manisan Cianjur",
+      name: "Bandrek Cianjur",
       category: 'popular',
       image: [
-        "https://1.bp.blogspot.com/-m_2B1a2c6ZQ/YV0fpK9NTEI/AAAAAAAAHbs/LTT75fkAsHUrNB303MzhlVCiCgPgWfK4wCLcBGAsYHQ/s653/manisan%2Bcianjur.png"
-         ],
+        "https://static.wixstatic.com/media/d73e12_65f06237c9e042b18a6877612b757e44~mv2.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/d73e12_65f06237c9e042b18a6877612b757e44~mv2.jpg"
+      ],
       location: location,
-      review: random.nextInt(250) + 20,
-      price: 30,
-      description: "Manisan yang terbuat dari buah-buahan seperti pala, mangga, dan pepaya yang diawetkan dengan gula. Rasanya manis, segar, dan sering dijadikan oleh-oleh.",
-      rate: 4.9),
+      review: random.nextInt(150) + 10,
+      price: 10,
+      description: "andrek adalah minuman hangat yang terbuat dari jahe, gula merah, dan berbagai rempah seperti kayu manis dan cengkeh.",
+      rate: 4.7,
+    ),
   TravelDestination(
       id: 3,
       name: "Sate Maranggi",
@@ -62,16 +63,17 @@ List<TravelDestination> listDestination = [
       rate: 4.8),
   TravelDestination(
       id: 4,
-      name: "Ikan Bakar Cianjur",
-      category: 'popular',
-      image: [
-        "https://media-cdn.tripadvisor.com/media/photo-s/1a/08/56/a1/gurame-bakar-kecap.jpg"
-       ],
-      location: location,
-      review: random.nextInt(250) + 20,
-      price: 100,
-      description: "Ikan air tawar seperti gurame atau nila yang dibumbui rempah khas Sunda, kemudian dibakar hingga matang. Biasanya disajikan dengan lalapan dan sambal terasi.",
-      rate: 4.7),
+      name: "Sekoteng",
+    category: 'popular',
+    image: [
+      "https://cdn.idntimes.com/content-images/community/2022/10/131947853-1060107821121673-5560354678092603041-n-photoroom-f86cce9f67ab87e1f2714ff01fb5315e-19b86b3ded0016935aeef97d3e09754f.jpg"
+    ],
+    location: location,
+    review: random.nextInt(120) + 15,
+    price: 10,
+    description: "Sekoteng adalah minuman hangat yang biasanya disajikan malam hari. Bahan utamanya adalah jahe yang direbus dengan gula dan ditambah kacang hijau, pacar cina, potongan roti, dan kacang tanah.",
+    rate: 4.9,
+  ),
 
   // Recommended destinations
   TravelDestination(
@@ -112,16 +114,17 @@ List<TravelDestination> listDestination = [
       rate: 4.7),
   TravelDestination(
       id: 8,
-      name: "Ayam Goreng Cianjur",
+      name: "Goyobod",
       category: 'rekomendasi',
       image: [
-        "https://media-cdn.tripadvisor.com/media/photo-s/13/38/8e/5b/photo0jpg.jpg"
+        "https://cdn.idntimes.com/content-images/community/2021/04/ranezkitchen-20210415-180740-009b21ba4282a7bf825c8b51efbf2145-d1c9cc1a854e3ea29c29a5d1e6f32266.jpg"
       ],
       location: location,
-      review: random.nextInt(250) + 20,
-      price: 35,
-      description: "Ayam yang dibumbui rempah khas Sunda, digoreng hingga berwarna keemasan. Kulitnya renyah, namun dagingnya tetap lembut dan gurih.",
-      rate: 4.7),
+      review: random.nextInt(180) + 20,
+      price: 5,
+      description: "Goyobod adalah minuman tradisional khas Sunda yang populer di Cianjur. Minuman ini terbuat dari campuran tepung hunkwe yang disajikan dengan es serut, santan, dan gula merah cair.",
+      rate: 4.6,
+    ),
   TravelDestination(
       id: 9,
       name: "Roti Manis Tan Keng Cu",

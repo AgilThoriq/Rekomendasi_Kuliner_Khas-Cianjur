@@ -1,4 +1,4 @@
-import 'package:aslab_travel/models/destination_page.dart';
+import 'package:aslab_travel/models/dashboard.dart';
 import 'package:aslab_travel/utils/const.dart';
 import 'package:flutter/material.dart';
 

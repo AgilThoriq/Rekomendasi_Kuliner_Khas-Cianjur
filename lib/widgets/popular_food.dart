@@ -1,10 +1,9 @@
-import 'package:aslab_travel/models/dashboard.dart';
-import 'package:aslab_travel/models/drink.dart';
+import 'package:aslab_travel/models/food.dart';
 import 'package:flutter/material.dart';
 
-class PopularDrink extends StatelessWidget {
-  final Drink destination;
-  const PopularDrink({super.key, required this.destination});
+class PopularFood extends StatelessWidget {
+  final Food destination;
+  const PopularFood({super.key, required this.destination});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,9 @@ class PopularDrink extends StatelessWidget {
                   blurRadius: 8,
                 ),
               ],
+              borderRadius: BorderRadius.circular(15),
             ),
+            height: 50,
           ),
         ),
         ClipRRect(
@@ -45,7 +46,7 @@ class PopularDrink extends StatelessWidget {
               children: [
                 const Spacer(),
                 Container(
-                  color: Colors.black.withOpacity(0.8),
+                  color: Colors.black.withOpacity(0.7),
                   child: Padding(
                     padding: const EdgeInsets.all(12),
                     child: Row(
@@ -55,6 +56,7 @@ class PopularDrink extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            // Nama Makanan
                             Text(
                               destination.name,
                               style: const TextStyle(
@@ -63,6 +65,8 @@ class PopularDrink extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
+                            const SizedBox(height: 5),
+                            // Lokasi
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -71,9 +75,7 @@ class PopularDrink extends StatelessWidget {
                                   color: Colors.white,
                                   size: 16,
                                 ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
+                                const SizedBox(width: 5),
                                 Text(
                                   destination.location,
                                   style: const TextStyle(
@@ -85,6 +87,7 @@ class PopularDrink extends StatelessWidget {
                             ),
                           ],
                         ),
+                        // Rating
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -93,9 +96,7 @@ class PopularDrink extends StatelessWidget {
                               size: 22,
                               color: Colors.yellow[800],
                             ),
-                            const SizedBox(
-                              width: 5,
-                            ),
+                            const SizedBox(width: 5),
                             Text(
                               destination.rate.toString(),
                               style: const TextStyle(
@@ -103,7 +104,7 @@ class PopularDrink extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ],

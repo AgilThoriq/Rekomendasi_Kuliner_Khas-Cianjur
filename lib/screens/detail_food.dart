@@ -1,17 +1,17 @@
 import 'package:aslab_travel/models/dashboard.dart';
-import 'package:aslab_travel/models/drink.dart';
+import 'package:aslab_travel/models/food.dart';
 import 'package:aslab_travel/utils/const.dart';
 import 'package:flutter/material.dart';
 
-class DetailDrinkScreen extends StatefulWidget {
-  final Drink destination; // This can be a "Drink" model instead of "Destination"
-  const DetailDrinkScreen({super.key, required this.destination});
+class DetailRestoScreen extends StatefulWidget {
+  final Food destination;
+  const DetailRestoScreen({super.key, required this.destination});
 
   @override
-  State<DetailDrinkScreen> createState() => _DetailDrinkScreenState();
+  State<DetailRestoScreen> createState() => _DetailRestoScreenState();
 }
 
-class _DetailDrinkScreenState extends State<DetailDrinkScreen> {
+class _DetailRestoScreenState extends State<DetailRestoScreen> {
   PageController pageController = PageController();
   int pageView = 0;
 
@@ -334,6 +334,9 @@ class _DetailDrinkScreenState extends State<DetailDrinkScreen> {
     );
   }
 
+  
+ 
+ 
   Widget buildAppBar() {
     return Container(
       height: 100,

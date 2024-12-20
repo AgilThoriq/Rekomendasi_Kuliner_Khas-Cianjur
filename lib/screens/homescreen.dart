@@ -1,9 +1,11 @@
-import 'package:aslab_travel/models/destination_page.dart';
-import 'package:aslab_travel/screens/detail_destination.dart';
+import 'package:aslab_travel/models/dashboard.dart';
+import 'package:aslab_travel/screens/akun_screen.dart';
+import 'package:aslab_travel/screens/detail_popular.dart';
 import 'package:aslab_travel/screens/favorite_drink_screen.dart';
+import 'package:aslab_travel/screens/restoran_menu_screen.dart';
 import 'package:aslab_travel/utils/const.dart';
 import 'package:aslab_travel/widgets/popular_destination.dart';
-import 'package:aslab_travel/widgets/rekomendasi_destination.dart';
+import 'package:aslab_travel/widgets/rekomendasi_popular.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<IconData> icons = [
     Icons.home_filled,
     Icons.coffee_maker_outlined,
-    Icons.shopping_cart_outlined,
+    Icons.restaurant_menu_outlined,
     Icons.person_outline_outlined
   ];
 
@@ -92,13 +94,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.w600,
                       color: Colors.black),
                 ),
-                Text(
-                  "Lihat Semua",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: blueTextColor,
-                  ),
-                ),
               ],
             ),
           ),
@@ -151,33 +146,46 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: List.generate(
-                            icons.length,
-                            (index) => GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  selectedPage = index;
-                                });
-                                if (icons[index] == Icons.coffee_maker_outlined) {
-                                  // Navigasi ke FavoriteDrinkScreen jika ikon kopi diklik
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => FavoriteDrinkScreen(),
-                                    ),
-                                  );
-                                }
-                              },
-                              child: Icon(
-                                icons[index],
-                                size: 32,
-                                color: selectedPage == index
-                                    ? Colors.white
-                                    : Colors.white.withOpacity(0.4),
+                         children: List.generate(
+                      icons.length,
+                      (index) => GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedPage = index;
+                          });
+                          if (icons[index] == Icons.coffee_maker_outlined) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => FavoriteDrinkScreen(),
                               ),
-                            ),
-                          ),
+                            );
+                          } else if (icons[index] == Icons.restaurant_menu_outlined) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => RestaurantMenuScreen(),
+                              ),
+                            );
+                          }else if (icons[index] == Icons.person_outline_outlined) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => InfoScreen(),
+                              ),
+                            );
+                          }
+                        },
+                        child: Icon(
+                          icons[index],
+                          size: 32,
+                          color: selectedPage == index
+                              ? Colors.white
+                              : Colors.white.withOpacity(0.4),
                         ),
+                      ),
+                    ),
+                      ),
                       ),
                       const SizedBox(
                         height: 25,
